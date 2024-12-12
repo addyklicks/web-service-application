@@ -239,44 +239,52 @@ This architecture implements a scalable, secure web application infrastructure u
 
 # Tools and Technologies Used
 
-## Cloud Platform
-- Amazon Web Services (AWS)
-  - ECS (Elastic Container Service)
-  - RDS (Relational Database Service)
-  - ElastiCache
-  - VPC
+#### **Cloud Platform**
+- **Amazon Web Services (AWS)**:
+  - **ECS (Elastic Container Service)**: Runs Dockerized applications.
+  - **RDS (Relational Database Service)**: Managed MySQL database.
+  - **ElastiCache**: Managed Redis caching.
+  - **VPC (Virtual Private Cloud)**: Provides network isolation and security.
 
-## Infrastructure as Code
-- Terraform (v1.5.7)
-  - HashiCorp Configuration Language (HCL)
+#### **Infrastructure as Code**
+- **Terraform (v1.10.0)**:
+  - Used for provisioning cloud resources.
+  - Written in **HashiCorp Configuration Language (HCL)** for modular and reusable infrastructure.
 
-## Containerization
-- Docker
-  - Multi-stage builds
-  - Docker Compose for local development
+#### **Containerization**
+- **Docker**:
+  - Used to containerize the Node.js application.
+  - **Multi-stage builds** for optimized images.
+  - **Docker Compose** for local development and testing.
 
-## Application
-- Node.js (v16+)
-- Express.js
-- MySQL Driver
-- Redis Client (ioredis)
+#### **Application Development**
+- **Node.js (v16+)**:
+  - Backend runtime environment for the web application.
+- **Express.js**:
+  - Web framework for Node.js.
+- **MySQL Driver**:
+  - Connects the Node.js application to the RDS database.
+- **Redis Client (ioredis)**:
+  - Integrates with ElastiCache for caching.
 
-## CI/CD
-- GitHub Actions
-  - Automated infrastructure deployment
-  - Terraform validation and planning
-  - Docker image building
+#### **CI/CD**
+- **GitHub Actions**:
+  - Automates infrastructure deployment.
+  - Validates Terraform configurations (linting, validation, and planning).
+  - Builds Docker images and deploys containers.
 
-## Development Tools
-- npm (Package Management)
-- nodemon (Development Server)
-- Jest (Unit Testing)
+#### **Development Tools**
+- **npm**: For package management and dependency handling.
+- **nodemon**: Automates application restarts during development.
+- **Jest**: Unit testing framework for Node.js.
 
-## Version Control
-- Git
-- GitHub
+#### **Version Control**
+- **Git**: For managing code changes.
+- **GitHub**: Repository hosting and collaboration.
 
-## Security and Monitoring
-- AWS IAM Roles
-- GitHub Secrets
-- CloudWatch (Optional monitoring)
+#### **Security and Monitoring**
+- **AWS IAM Roles**: Ensures least-privilege access to resources.
+- **GitHub Secrets**: Manages sensitive data like API keys and credentials.
+- **CloudWatch (Optional)**: Logs and monitors application performance.
+
+---

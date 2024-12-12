@@ -167,3 +167,116 @@ The GitHub Actions workflow in `/.github/workflows/terraform-ci-cd.yaml` automat
 ## Conclusion
 This project demonstrates a scalable and modular approach to deploying a cloud-based application using Terraform, Docker, and CI/CD pipelines. Each component is designed to be reusable, secure, and easy to manage. Let me know if you have any questions!
 
+
+
+
+# Cloud-Native Web Services Application Architecture
+
+## System Overview
+This architecture implements a scalable, secure web application infrastructure using AWS cloud services and containerized deployment.
+
+## Architecture Components
+
+### Compute Layer
+- **Container Orchestration**: Amazon ECS (Elastic Container Service) with Fargate
+  - Serverless container management
+  - Automatic scaling and high availability
+  - Supports Docker containerized applications
+
+### Networking
+- **Virtual Private Cloud (VPC)**
+  - Multi-AZ deployment
+  - Public and private subnets
+  - Internet Gateway for external access
+  - Security Groups for network isolation
+
+### Database Layer
+- **Relational Database**
+  - Amazon RDS (MySQL)
+  - Multi-AZ configuration
+  - Automated backups
+  - Encryption at rest
+
+### Caching Layer
+- **In-Memory Caching**
+  - Amazon ElastiCache (Redis)
+  - Distributed caching
+  - High performance data retrieval
+  - Supports session management and query result caching
+
+### Application
+- **Node.js Web Application**
+  - Containerized using Docker
+  - Express.js framework
+  - Environment-configurable database and cache connections
+
+## Deployment Pipeline
+- **Continuous Integration/Continuous Deployment (CI/CD)**
+  - GitHub Actions
+  - Automated infrastructure provisioning
+  - Docker image building and pushing
+  - Security scanning
+  - Terraform validation and planning
+
+## Security Considerations
+- Least privilege IAM roles
+- Network isolation using security groups
+- Encrypted database and cache connections
+- No public exposure of sensitive resources
+
+## Scalability
+- Auto-scaling ECS services
+- Elastic database and cache configurations
+- Stateless application design
+
+## Cost Optimization
+- Serverless Fargate for compute
+- Managed services reducing operational overhead
+- Pay-per-use model for most components
+
+
+
+
+# Tools and Technologies Used
+
+## Cloud Platform
+- Amazon Web Services (AWS)
+  - ECS (Elastic Container Service)
+  - RDS (Relational Database Service)
+  - ElastiCache
+  - VPC
+
+## Infrastructure as Code
+- Terraform (v1.5.7)
+  - HashiCorp Configuration Language (HCL)
+
+## Containerization
+- Docker
+  - Multi-stage builds
+  - Docker Compose for local development
+
+## Application
+- Node.js (v16+)
+- Express.js
+- MySQL Driver
+- Redis Client (ioredis)
+
+## CI/CD
+- GitHub Actions
+  - Automated infrastructure deployment
+  - Terraform validation and planning
+  - Docker image building
+
+## Development Tools
+- npm (Package Management)
+- nodemon (Development Server)
+- Jest (Unit Testing)
+
+## Version Control
+- Git
+- GitHub
+
+## Security and Monitoring
+- AWS IAM Roles
+- GitHub Secrets
+- CloudWatch (Optional monitoring)

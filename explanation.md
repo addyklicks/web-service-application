@@ -1,6 +1,16 @@
 Below is the detailed explanation of the code for each section, written line by line with the code first followed by the explanation. This will help you understand the implementation thoroughly and prepare for any questions during your presentation.
 
 ---
+---
+
+### **Explanation of the Code and Its Purpose**
+
+The code has been structured to create a modular and scalable infrastructure for a Node.js web application, ensuring adherence to cloud best practices. Each segment addresses a critical component of the architecture. The **VPC module** establishes the foundation by creating a secure network with public and private subnets to isolate and protect resources. The **ECS module** is configured to deploy Dockerized Node.js applications in a highly available and scalable environment, leveraging an Application Load Balancer for routing traffic to the services. Additionally, the **RDS module** provisions a MySQL database in private subnets for persistent storage, while the **Redis module** implements caching to enhance application performance by reducing database load.
+
+The entire infrastructure is managed using **Terraform**, allowing version-controlled, reproducible deployments with modularized components for easy maintenance. A **GitHub Actions CI/CD pipeline** has been implemented to automate Terraform validation, planning, and application of changes, ensuring consistent and secure updates to the infrastructure. By using Docker, the Node.js application is containerized for portability and seamless deployment to ECS. Security is enforced through IAM roles, private subnets, and Security Groups, while scalability is achieved using autoscaling for ECS and RDS. The architecture and its codebase are structured to balance cost-efficiency, performance, and security, making it adaptable to future requirements.
+
+---
+---
 
 ### **1. Terraform Root Configuration**
 

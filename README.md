@@ -168,7 +168,7 @@ The GitHub Actions workflow in `/.github/workflows/terraform-ci-cd.yaml` automat
 This project demonstrates a scalable and modular approach to deploying a cloud-based application using Terraform, Docker, and CI/CD pipelines. Each component is designed to be reusable, secure, and easy to manage. Let me know if you have any questions!
 
 
-
+---
 
 # Cloud-Native Web Services Application Architecture
 
@@ -235,7 +235,7 @@ This architecture implements a scalable, secure web application infrastructure u
 - Pay-per-use model for most components
 
 
-
+---
 
 # Tools and Technologies Used
 

@@ -241,3 +241,137 @@ jobs:
     6. **Terraform Apply**: Applies the changes when triggered by a push.
 
 ---
+
+
+
+### **`package.json` File Explanation**
+
+The `package.json` file is a configuration file used in Node.js projects. It contains essential metadata about the application, its dependencies, and scripts. Below is a breakdown of the key fields:
+
+#### **1. `name`**
+- **Value**: `"webapp"`
+- **Description**: 
+  - Specifies the name of the project or application.
+  - Helps identify the package if published to the npm registry.
+  - In this project, the application is named `webapp`.
+
+#### **2. `version`**
+- **Value**: `"1.0.0"`
+- **Description**: 
+  - Indicates the version of the application.
+  - Follows semantic versioning (`MAJOR.MINOR.PATCH`):
+    - **MAJOR**: Breaking changes.
+    - **MINOR**: New features (backward compatible).
+    - **PATCH**: Bug fixes.
+  - The version `1.0.0` represents the initial release.
+
+#### **3. `main`**
+- **Value**: `"server.js"`
+- **Description**: 
+  - Specifies the entry point of the application.
+  - When the application starts, `server.js` is executed.
+
+#### **4. `scripts`**
+- **Value**:
+  ```json
+  {
+    "start": "node server.js"
+  }
+  ```
+- **Description**: 
+  - Defines commands that can be executed using `npm run <script-name>`.
+  - The `start` script runs the application using `node server.js`.
+
+#### **5. `dependencies`**
+- **Value**:
+  ```json
+  {
+    "express": "^4.18.2"
+  }
+  ```
+- **Description**: 
+  - Lists the external libraries required for the application to function.
+  - **`express`**: A minimal web framework for building APIs and web servers.
+  - The caret (`^`) in `^4.18.2` ensures compatibility with any `4.x.x` version that is greater than or equal to `4.18.2` but less than `5.0.0`.
+
+---
+
+### **How It Works**
+1. **Installing Dependencies**:
+   - Run `npm install` to download and install the dependencies listed under `dependencies` into the `node_modules` folder.
+2. **Starting the Application**:
+   - Use the `npm start` command to run the `start` script, which starts the application by executing `server.js`.
+
+---
+
+
+
+### **`server.js` File Explanation**
+
+The `server.js` file is the entry point of the Node.js application. It defines the application logic, sets up the HTTP server, and handles incoming requests. Below is a detailed explanation of the code:
+
+#### **1. Importing the Express Library**
+```javascript
+const express = require('express'); // Import the Express library
+```
+- **Description**:
+  - Express is a minimal Node.js framework used for building web servers and APIs.
+  - The `require('express')` statement imports the Express module so it can be used in the application.
+
+#### **2. Creating an Express Application**
+```javascript
+const app = express(); // Create an instance of an Express application
+```
+- **Description**:
+  - `express()` initializes a new instance of an Express application.
+  - This `app` object is used to define routes, middleware, and other server logic.
+
+#### **3. Defining a Route**
+```javascript
+app.get('/', (req, res) => {
+  res.send('Hello World!'); // Send a response to the client
+});
+```
+- **Description**:
+  - **`app.get('/', ...)`**:
+    - Defines a route that listens for GET requests on the root URL (`/`).
+  - **Callback Function**:
+    - The callback function `(req, res)` handles the request (`req`) and response (`res`).
+    - **`res.send('Hello World!')`**:
+      - Sends a plain text response, `"Hello World!"`, to the client.
+
+#### **4. Starting the Server**
+```javascript
+app.listen(3000, () => {
+  console.log('Server is running on port 3000');
+});
+```
+- **Description**:
+  - **`app.listen(3000)`**:
+    - Starts the server and makes it listen for incoming requests on port `3000`.
+  - **Callback Function**:
+    - Logs a message to the console when the server starts successfully: `"Server is running on port 3000"`.
+
+---
+
+### **How It Works**
+1. **Starting the Application**:
+   - When the application is started (e.g., using `node server.js` or `npm start`), the Express server begins listening on port 3000.
+2. **Handling Requests**:
+   - When a client sends a GET request to the root URL (`http://localhost:3000`), the server responds with `"Hello World!"`.
+3. **Output**:
+   - The message `"Server is running on port 3000"` is logged to the console when the server starts.
+
+---
+
+### **Example Usage**
+1. **Start the Server**:
+   ```bash
+   node server.js
+   ```
+2. **Access the Application**:
+   - Open a browser or use `curl` to visit `http://localhost:3000`.
+   - The response will be: `"Hello World!"`.
+
+---
+
